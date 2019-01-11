@@ -1,3 +1,5 @@
+import  bhlUtil  from './bhl'
+import { Tween } from './tween'
 //设备环境
 export const inBrowser = typeof window !== 'undefined';
 export const inWeex = typeof WXEnvironment !== 'undefined' && !!WXEnvironment.platform;
@@ -388,14 +390,14 @@ export const formatDate = (obj = "", fmt = "YYYY-MM-DD HH:mm") => {
     }
   }
   let o = {
-    "M+": obj.getMonth() + 1, //月份           
-    "D+": obj.getDate(), //日           
-    "h+": obj.getHours() % 12 == 0 ? 12 : obj.getHours() % 12, //小时           
-    "H+": obj.getHours(), //小时           
-    "m+": obj.getMinutes(), //分           
-    "s+": obj.getSeconds(), //秒           
-    "q+": Math.floor((obj.getMonth() + 3) / 3), //季度           
-    "S+": obj.getMilliseconds() //毫秒           
+    "M+": obj.getMonth() + 1, //月份
+    "D+": obj.getDate(), //日
+    "h+": obj.getHours() % 12 == 0 ? 12 : obj.getHours() % 12, //小时
+    "H+": obj.getHours(), //小时
+    "m+": obj.getMinutes(), //分
+    "s+": obj.getSeconds(), //秒
+    "q+": Math.floor((obj.getMonth() + 3) / 3), //季度
+    "S+": obj.getMilliseconds() //毫秒
   },
     week = {
       "0": "/u65e5",
@@ -635,5 +637,7 @@ export default {
   getMaxZindex,
   resizeInit,
   loadImage,
-  downloadFile
+  downloadFile,
+  bhlUtil,
+  Tween,
 }
